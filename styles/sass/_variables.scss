@@ -1,0 +1,25 @@
+@mixin mainHeading($sizeValue) {
+  font-size: $sizeValue;
+  color: $black;
+  font-family: "", sans-serif;
+  font-weight: regular;
+  line-height: 6.4rem;
+}
+
+@mixin subHeading($sizeValue) {
+  font-size: $sizeValue;
+  color: $black;
+  font-family: "", sans-serif;
+  font-weight: regular;
+  line-height: 3rem;
+}
+
+@mixin paragraph($sizeValue) {
+  font-size: $sizeValue;
+  color: $black;
+  font-family: "", sans-serif;
+  font-weight: regular;
+  line-height: 2rem;
+}
+
+$black: #000000;

@@ -20,30 +20,36 @@ artistApp.getArtists = () => {
         return response.json();
     })
     .then(function (data) {
-        console.log(data)
-        artistApp.displayArtists(data);
+      // console.log(data);
+
+      const artistDataArray = Object.entries(data);
+      console.log(artistDataArray);
+
+      // artistApp.displayArtists(artistDataArray);
     })
+
+  
 }
 
 artistApp.displayArtists = (artistData) => {
 
-    const ulElement = document.querySelector('ul').innerHTML = '';
+    document.querySelector('ul').innerHTML = '';
 
-    artistData.forEach((titleData) => {
-        const listElement = document.createElement('li');
+    artistData.forEach((item) => {
+      const listElement = document.createElement("li");
 
-        const artistTitle = document.createElement('h2');
+      const artistTitle = document.createElement("h2");
 
-        artistTitle.textContent = titleData.similarartists[artist].name;
+      artistTitle.textContent = item[1].artist[0].name;
 
-        // titleData.artist[0].name
+      console.log(artistTitle);
+      // titleData.artist[0].name
 
-        
-        // listElement.appendChild(artistTitle);
-        
-        // ulElement.appendChild(listElement);
-        
-        // console.log(artistTitle);
+      listElement.appendChild(artistTitle);
+
+      ulElement.appendChild(listElement);
+
+      // document.querySelector("newArtist").appendChild(listElement);
     });
 
 }

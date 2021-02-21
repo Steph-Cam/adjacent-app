@@ -12,6 +12,7 @@ artistApp.getArtists = () => {
         api_key: artistApp.apiKey,
         format: 'json',
         limit: 9,
+        mbid: '',
         // autocorrect: [1]
     })
     
@@ -21,33 +22,42 @@ artistApp.getArtists = () => {
     })
     .then(function (data) {
       // console.log(data);
+      // console.log(data.similarartists.artist);
 
-      const artistDataArray = Object.entries(data);
-      console.log(artistDataArray);
-
-      // artistApp.displayArtists(artistDataArray);
+      artistApp.displayArtists(data);
     })
 
   
 }
 
 artistApp.displayArtists = (artistData) => {
+// console.log(artistData);
 
-    document.querySelector('ul').innerHTML = '';
+const artistArray = artistData.similarartists.artist;
+// console.log(artistArray);
 
-    artistData.forEach((item) => {
+    // document.querySelector('ul').innerHTML = '';
+
+    artistArray.forEach((item) => {
+      // console.log(item.name);
+
+      // const artistName = item.name;
+      // const image = item.img;
+
       const listElement = document.createElement("li");
-
       const artistTitle = document.createElement("h2");
+      const artistButton = document.createElement('a');
 
-      artistTitle.textContent = item[1].artist[0].name;
+      artistTitle.textContent = item.name;
+      artistButton.setAttribute("href", item.url);
 
       console.log(artistTitle);
+      console.log(artistButton);
       // titleData.artist[0].name
-
       listElement.appendChild(artistTitle);
+      listElement.appendChild(artistButton);
 
-      ulElement.appendChild(listElement);
+      // ulElement.appendChild(lis/tElement);
 
       // document.querySelector("newArtist").appendChild(listElement);
     });

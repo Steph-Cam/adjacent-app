@@ -3,16 +3,17 @@ const artistApp = {};
 artistApp.apiUrl = "https://ws.audioscrobbler.com/2.0/";
 artistApp.apiKey = "e35219e4872d0f1dcee255f3768714bb";
 
+const ulElement = document.getElementById("newArtists");
+
 artistApp.getArtists = () => {
 
     const url = new URL(artistApp.apiUrl);
     url.search = new URLSearchParams({
-        method: 'artist.getSimilar',
-        artist: 'kanye',
+        method: "artist.getSimilar",
+        artist: "cave in",
         api_key: artistApp.apiKey,
-        format: 'json',
+        format: "json",
         limit: 9,
-        mbid: '',
         // autocorrect: [1]
     })
     
@@ -34,32 +35,27 @@ artistApp.displayArtists = (artistData) => {
 // console.log(artistData);
 
 const artistArray = artistData.similarartists.artist;
-// console.log(artistArray);
-
-    // document.querySelector('ul').innerHTML = '';
+console.log(artistArray);
 
     artistArray.forEach((item) => {
       // console.log(item.name);
 
-      // const artistName = item.name;
-      // const image = item.img;
-
       const listElement = document.createElement("li");
-      const artistTitle = document.createElement("h2");
-      const artistButton = document.createElement('a');
+      // const searchArtist = document.createElement("h2")
+      const artistName = document.createElement("h3");
+      const artistButton = document.createElement("a");
 
-      artistTitle.textContent = item.name;
+      artistName.textContent = item.name;
       artistButton.setAttribute("href", item.url);
 
-      console.log(artistTitle);
-      console.log(artistButton);
-      // titleData.artist[0].name
-      listElement.appendChild(artistTitle);
+      // console.log(artistName);
+      // console.log(artistButton);
+     
+      listElement.appendChild(artistName);
       listElement.appendChild(artistButton);
 
-      // ulElement.appendChild(lis/tElement);
-
-      // document.querySelector("newArtist").appendChild(listElement);
+      //  add list elements to the ul
+      ulElement.appendChild(listElement);
     });
 
 }
@@ -67,7 +63,24 @@ const artistArray = artistData.similarartists.artist;
 
 // create init method
 artistApp.init = () => {
-    artistApp.getArtists();
+  const formElement = document.querySelector("form");
+
+  // attach event listener to get info on submit
+  formElement.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // clear out results section before adding new results
+    ulElement.innerHTML = "";
+
+    // get the value of what the user submits in form
+    const artist = formElement.value;
+
+    // call getArtists function by passing in the value
+    artistApp.getArtists(artist);
+
+    // clear out the search field upon submission
+    document.getElementById("artistInput").value = "";
+  });
 }
 
 artistApp.init();

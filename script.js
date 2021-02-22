@@ -5,12 +5,12 @@ artistApp.apiKey = "e35219e4872d0f1dcee255f3768714bb";
 
 const ulElement = document.getElementById("newArtists");
 
-artistApp.getArtists = () => {
+artistApp.getArtists = (artist) => {
 
     const url = new URL(artistApp.apiUrl);
     url.search = new URLSearchParams({
         method: "artist.getSimilar",
-        artist: "cave in",
+        artist: artist,
         api_key: artistApp.apiKey,
         format: "json",
         limit: 9,
@@ -46,11 +46,21 @@ console.log(artistArray);
       const artistButton = document.createElement("a");
 
       artistName.textContent = item.name;
-      artistButton.setAttribute("href", item.url);
+      // first attemp:
+    //   artistButton.setAttribute("href", item.url);
+      artistButton.setAttribute('href', item.url);
+
+      // Cam's probably sketchy way: 
+      // artistButton.innerText = 'Artist Profile';
+
+      // Susan's way:
+      artistButton.append('Artist Profile');
+
+
 
       // console.log(artistName);
       // console.log(artistButton);
-     
+  
       listElement.appendChild(artistName);
       listElement.appendChild(artistButton);
 
@@ -60,30 +70,62 @@ console.log(artistArray);
 
 }
 
+artistApp.getUserInput = () => {
 
-// create init method
-artistApp.init = () => {
   const formElement = document.querySelector("form");
 
   // attach event listener to get info on submit
   formElement.addEventListener("submit", function(e) {
     e.preventDefault();
+    
+    // console.log(e);
 
     // clear out results section before adding new results
     ulElement.innerHTML = "";
-
+    
     // get the value of what the user submits in form
-    const artist = formElement.value;
-
+    // const artist = formElement.value;
+    const artist = e.target[0].value;
+    console.log(artist);
+    
+    
+    // clear out the search field upon submission
     // call getArtists function by passing in the value
     artistApp.getArtists(artist);
-
-    // clear out the search field upon submission
     document.getElementById("artistInput").value = "";
   });
+  
+
+}
+
+
+// create init method
+artistApp.init = () => {
+  artistApp.getUserInput();
+  // artistApp.getArtists();
 }
 
 artistApp.init();
 
 
+
+// formElement.addEventListener("submit", function(e) {
+//   e.preventDefault();
+  
+//   console.log(e);
+  
+//   // clear out results section before adding new results
+//   ulElement.innerHTML = "";
+  
+//   // get the value of what the user submits in form
+//   // const artist = formElement.value;
+//   const artist = e.target;
+//   console.log(artist);
+  
+  
+//   document.getElementById("artistInput").value = "";
+//   // clear out the search field upon submission
+//   // call getArtists function by passing in the value
+//   artistApp.getArtists(artist);
+// });
 

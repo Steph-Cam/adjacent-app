@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap");
+
+@mixin mainHeading($sizeValue) {
+  font-size: $sizeValue;
+  color: $grey;
+  font-family: "Arimo", sans-serif;
+  font-weight: 700;
+  line-height: 6.4rem;
+}
+
+@mixin subHeading($sizeValue) {
+  font-size: $sizeValue;
+  color: $grey;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  line-height: 3rem;
+}
+
+@mixin paragraph($sizeValue) {
+  font-size: $sizeValue;
+  color: $grey;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  line-height: 2rem;
+}

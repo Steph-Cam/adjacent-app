@@ -1,4 +1,9 @@
+$black: #000000;
+$eggplant: #312c51;
+$violet: #48426d;
+$grey: #bbbbbb;
+$peach: #ffe3d8;
 
-@import 'variables';
-@import 'setup';
-@import 'main';
+@import 'partials/setup';
+@import 'partials/variables';
+@import 'partials/main';

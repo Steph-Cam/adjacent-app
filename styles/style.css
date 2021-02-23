@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap");
 html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
@@ -245,6 +246,120 @@ ul {
   list-style: none;
 }
 
-body {
-  overflow-x: hidden;
+main {
+  background-image: url(/assets/pexels-bob-clark-21148.jpg);
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+}
+
+main .mainHeader {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 80%;
+}
+
+.flexContainer1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 10%;
+}
+
+.flexContainer1 h1 {
+  font-size: 6rem;
+  color: #bbbbbb;
+  font-family: "Arimo", sans-serif;
+  font-weight: 700;
+  line-height: 6.4rem;
+}
+
+.flexContainer1 h2 {
+  font-size: 3rem;
+  color: #bbbbbb;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  line-height: 3rem;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+form input[type="text"] {
+  font-size: 1.8rem;
+  color: #bbbbbb;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  line-height: 2rem;
+  color: #000000;
+  width: 300px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+form input[type="text"]::-webkit-input-placeholder {
+  font-size: 1.8rem;
+  color: #bbbbbb;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  line-height: 2rem;
+  line-height: 3rem;
+}
+
+form input[type="text"]:-ms-input-placeholder {
+  font-size: 1.8rem;
+  color: #bbbbbb;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  line-height: 2rem;
+  line-height: 3rem;
+}
+
+form input[type="text"]::-ms-input-placeholder {
+  font-size: 1.8rem;
+  color: #bbbbbb;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  line-height: 2rem;
+  line-height: 3rem;
+}
+
+form input[type="text"]::placeholder {
+  font-size: 1.8rem;
+  color: #bbbbbb;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  line-height: 2rem;
+  line-height: 3rem;
+}
+
+form input[type="submit"] {
+  height: 40px;
 }

@@ -1,0 +1,60 @@
+// Main Section
+
+main {
+  background-image: url(/assets/pexels-bob-clark-21148.jpg);
+  background-size: cover;
+  height: 100vh;
+  margin: 0;
+
+  .mainHeader {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 80%;
+}
+
+.flexContainer1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+
+  h1 {
+    @include mainHeading(6rem);
+  }
+
+  h2 {
+    @include subHeading(3rem);
+  }
+}
+
+form {
+
+  display: flex;
+  justify-content: center;
+  
+  input[type="text"] {
+    @include paragraph(1.8rem);
+    color: $black;
+    width: 300px;
+    height: 40px;
+    padding-left: 10px;
+  }
+
+  input[type="text"]::placeholder {
+    @include paragraph(1.8rem);
+    line-height: 3rem;
+  }
+
+  input[type="submit"] {
+    // padding: 15px;
+    height: 40px;
+  }
+}

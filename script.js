@@ -16,7 +16,7 @@ const ulElement = document.getElementById("newArtists");
 // });
 
 artistApp.getArtists = (artist) => {
-
+  let newArray = [];
     // console.log('hello');
     const url1 = new URL(artistApp.apiUrl);
     url1.search = new URLSearchParams({
@@ -39,7 +39,7 @@ artistApp.getArtists = (artist) => {
             const dataArray = [];
             for (let i = 0; i < artists.length; i++) {
                 dataArray.push(artists[i].name);
-                // namesArray.push(artists[i].url);
+                // dataArray.push(artists[i].url);
             }
             // console.log(dataArray);
             // similar to the pokemon example where we had a array of URLS, you now have an array of artist names
@@ -51,60 +51,79 @@ artistApp.getArtists = (artist) => {
                         return data.json();
                     })
             });
-            let newArray = [];
+            
             // console.log(newArtists);
             Promise.all(newArtists)
-                .then(data => {
-                    console.log(data); // a array of 9 similar artists data
-                    data.map(artistThumb =>
-                        newArray.push(artistThumb.artists[0].strArtistThumb);
-            )
-
+                .then(secondData => {
+                    // console.log(secondData[0].artists[1].strArtistThumb); // a array of 9 similar artists data
+                    // console.log(secondData[1].artists);
+                    secondData.map(secondDataChild => {
+                      secondDataChild.artists.map((artistThumb) => {
+                        newArray.push(
+                          artistThumb.strArtistThumb); 
+                        // newArray.push(artistThumb.strArtistThumb + artistThumb.strArtist); 
+                        // console.log(newArray);
+                    })
+                    // secondData[0].artists.map((artistThumb) => {
+                    //     newArray.push(artistThumb.strArtistThumb);
+                        
+                      })
         })
-    // console.log(newArray);
-
-    dataArray.push(newArtists);
-    // console.log(dataArray);
-})
-
+        // console.log(newArray);
+        
+        // dataArray.push(newArtists);
+        // console.log(dataArray);
+      })
+      
       // artistApp.displayArtists(dataArray);
+      return newArray;
 }
 // artistApp.getArtists();
 
 
 // Display Artists function
 
-// artistApp.displayArtists = () => {
+artistApp.displayArtists = (artistObjects) => {
+console.log(artistObjects);
 
-//   dataArray.forEach((item) => {
-//     console.log(item.name);
+  artistObjects.map();
+  const artistImage = document.createElement("img"); 
+  artistImage.setAttribute("href", item.url);
 
-//     const listElement = document.createElement("li");
-//     // const searchArtist = document.createElement("h2")
-//     const artistName = document.createElement("h3");
-//     const artistButton = document.createElement("a");
 
-//     artistName.textContent = item.name;
-//     // first attemp:
-//     //   artistButton.setAttribute("href", item.url);
-//     artistButton.setAttribute("href", item.url);
+  // turn artistObjects into an object
 
-//     // Cam's probably sketchy way:
-//     // artistButton.innerText = 'Artist Profile';
 
-//     // Susan's way:
-//     artistButton.append("Artist Profile");
+  artistObjects.forEach((item) => {
+    console.log(item);
 
-//     // console.log(artistName);
-//     // console.log(artistButton);
+    const listElement = document.createElement("li");
+    // const searchArtist = document.createElement("h2")
+    const artistName = document.createElement("h3");
+    const artistButton = document.createElement("a");
+    
 
-//     listElement.appendChild(artistName);
-//     listElement.appendChild(artistButton);
+    artistName.textContent = item.name;
+    // first attemp:
+    //   artistButton.setAttribute("href", item.url);
+    artistButton.setAttribute("href", item.url);
 
-//     //  add list elements to the ul
-//     ulElement.appendChild(listElement);
-//   });
-// };
+    // Cam's probably sketchy way:
+    // artistButton.innerText = 'Artist Profile';
+
+    // Susan's way:
+    artistButton.append("Artist Profile");
+
+    // console.log(artistName);
+    // console.log(artistButton);
+
+    listElement.appendChild(artistName);
+    listElement.appendChild(artistButton);
+
+    //  add list elements to the ul
+    ulElement.appendChild(listElement);
+  });
+};
 
 artistApp.getUserInput = () => {
     const formElement = document.querySelector("form");
@@ -136,7 +155,9 @@ artistApp.getUserInput = () => {
 
         // // clear out the search field upon submission
         // // call getArtists function by passing in the value
-        artistApp.getArtists(artist);
+        let artistObjects = artistApp.getArtists(artist);
+        // console.log(artistObjects);
+        artistApp.displayArtists(artistObjects);
         // document.getElementById("artistInput").value = "";
         // console.log(artist);
     });

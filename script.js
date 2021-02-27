@@ -46,14 +46,15 @@ artistApp.getArtists = (artist) => {
       });
       
       Promise.all(newArtists).then((secondData) => {
-        console.log(newArtists);
+        // console.log(newArtists);
+        const artistsToDisplay = [];
       
         secondData.forEach((secondDataChild) => {
           secondDataChild.artists.map((artistThumb) => {
-            newArray.push({
+            artistsToDisplay.push({
               name: artistThumb.strArtist,
               imgThumb: artistThumb.strArtistThumb,
-              url: artistThumb.LastFMChart
+              url: `http://${artistThumb.strWebsite}`,
             });
             // newArray.push(artistThumb.strArtistThumb + artistThumb.strArtist);
             
@@ -61,8 +62,8 @@ artistApp.getArtists = (artist) => {
           // secondData[0].artists.map((artistThumb) => {
           //     newArray.push(artistThumb.strArtistThumb);
         });
-        console.log(newArray);
-        artistApp.displayArtists(newArray);
+        console.log(artistsToDisplay);
+        artistApp.displayArtists(artistsToDisplay);
       });
       
       // dataArray.push(newArtists);
@@ -75,6 +76,7 @@ artistApp.getArtists = (artist) => {
 // Display Artists function
 artistApp.displayArtists = (artistArray) => {
   // array of objects is looped over
+  ulElement.innerHTML = "";
   artistArray.forEach((item) => {
     // create these elements
     const listElement = document.createElement("li");
@@ -107,7 +109,7 @@ artistApp.getUserInput = () => {
     // clear out results section before adding new results
     
     // get the value of what the user submits in form
-    ulElement.value = "";
+    // ulElement.innerHTML = "";
     // const artist = formElement.value;
     // // alert user if they enter an empty string
     // // const artistResults = e.artists[0].strArtist;

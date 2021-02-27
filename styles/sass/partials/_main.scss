@@ -1,6 +1,7 @@
 // Main Section
 body {
   min-height: 100vh;
+  position: relative;
 }
 main {
   // background-image: url(../assets/pexels-bob-clark-21148._colour_1.jpg);
@@ -23,24 +24,17 @@ main {
   width: 85%;
 }
 
-
 .flexContainer1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 10%;
-  
+
   .flexContainer2 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    // margin: 10% 0 0 10%;
-  
-    h1 {
-      @include mainHeading(6rem);
-      // margin-bottom: 5px;
-    }
-  
+    margin-top: 40px;
+
     h2 {
       @include subHeading(2.5rem);
       margin: 5px 0 0 0;
@@ -48,29 +42,29 @@ main {
   }
 
   form {
-  
     display: flex;
     justify-content: flex-start;
     width: auto;
-    margin-top: 75px;
-  
-  
+    margin-top: 50px;
+
     input[type="text"] {
       @include paragraph(1.8rem);
       color: $black;
+      background-color: $grey;
+      opacity: 0.7;
       width: 280px;
       height: 50px;
       padding-left: 10px;
-      padding-top: 9px;
+      padding-top: 4px;
       border-radius: 2px;
       border: none;
     }
-  
+
     input[type="text"]::placeholder {
       @include paragraph(1.8rem);
       line-height: 3rem;
     }
-  
+
     button {
       padding-top: 2px;
       height: 50px;
@@ -81,30 +75,71 @@ main {
       border-radius: 2px;
       color: $peach;
       font-size: 1.8rem;
+
+      &:hover {
+        background-color: $eggplant;
+        opacity: 0.8;
+        color: white;
+
+        &:active {
+          position: relative;
+          left: 2px;
+          top: 2px;
+        }
+      }
     }
   }
-
 }
 
 ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
+  margin-top: 20px;
 
   li {
-    width: auto;
-    width: calc((100% / 3) - 40px);
+    width: calc(100% / 4);
+    margin-right: 50px;
+    height: auto;
+    min-width: 200px;
     background-color: $violet;
     display: flex;
     flex-direction: column-reverse;
-    margin-top: 100px;
+    justify-content: space-between;
+    margin-top: 25px;
     border-radius: 2px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     box-shadow: 5px 5px 35px $eggplant;
-    
-    
+    transition: all 0.2s ease-in-out;
+    opacity: 0.8;
+
+    &:hover {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+
+    h3 {
+      @include headingThree(1.8rem);
+      opacity: 0.9;
+      margin: 0;
+      margin: 5px 10px 10px;
+    }
+
+    a {
+      @include paragraph(1.5rem);
+      opacity: 0.9;
+      margin: 0 0 10px 10px;
+      text-decoration: none;
+      cursor: ne-resize;
+
+      &:hover {
+        color: white;
+      }
+    }
+
     img {
+      height: auto;
       min-height: 180px;
       min-width: 180px;
       margin: 0;
@@ -112,11 +147,7 @@ ul {
       border-top-right-radius: 6px;
     }
   }
-
-  
-
 }
-
 
 footer {
   min-width: 100%;
@@ -125,33 +156,33 @@ footer {
   height: 35px;
   display: flex;
   justify-content: center;
+  position: fixed;
+  bottom: 0;
 
   p {
+    @include paragraph(1.5rem);
     margin: 0;
-    padding: 10px;
+    padding: 10px 0;
     font-size: 1.4rem;
-    color: $peach;
+    color: $grey;
     opacity: 0.7;
-    
+
     span {
       margin-right: 7px;
     }
   }
 
   a {
-    color: $peach;
+    @include paragraph(1.5rem);
+    color: $grey;
     font-size: 1.4rem;
     opacity: 0.7;
     padding-top: 10px;
-    margin: 0;
+    margin: 0 5px;
     text-decoration: none;
   }
 
   a:hover {
     color: white;
   }
-
-
 }
-
-

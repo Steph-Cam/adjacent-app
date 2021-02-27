@@ -18,7 +18,7 @@ artistApp.getArtists = (artist) => {
     artist: artist,
     api_key: artistApp.apiKey,
     format: "json",
-    limit: 3,
+    limit: 4,
     // autocorrect: [1]
   });
   fetch(url1)
@@ -94,18 +94,20 @@ artistApp.displayArtists = (artistArray) => {
   });
 };
 artistApp.getUserInput = () => {
-
+  
   const formElement = document.querySelector("form");
   // let artist = "";
   // attach event listener to get info on submit
   formElement.addEventListener("submit", function (e) {
     e.preventDefault();
+    
     artist = e.target[0].value;
     // console.log(artist);
     // console.log(e);
     // clear out results section before adding new results
-    ulElement.innerHTML = "";
+    
     // get the value of what the user submits in form
+    ulElement.value = "";
     // const artist = formElement.value;
     // // alert user if they enter an empty string
     // // const artistResults = e.artists[0].strArtist;
@@ -114,7 +116,6 @@ artistApp.getUserInput = () => {
     // // call getArtists function by passing in the value
 
     artistApp.getArtists(artist);
-
     // console.log(artistObjects);
     // artistApp.displayArtists(artistObjects);
     document.getElementById("artistInput").value = "";

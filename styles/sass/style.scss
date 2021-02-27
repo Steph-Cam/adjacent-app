@@ -2,8 +2,9 @@ $black: #000000;
 $eggplant: #312c51;
 $violet: #48426d;
 $grey: #bbbbbb;
+$darkGrey: #505050;
 $peach: #ffe3d8;
 
-@import 'partials/setup';
 @import 'partials/variables';
+@import 'partials/setup';
 @import 'partials/main';

@@ -246,8 +246,12 @@ ul {
   list-style: none;
 }
 
+body {
+  min-height: 100vh;
+}
+
 main {
-  background-image: url(../assets/pexels-bob-clark-21148._colour_1.jpg);
+  background-image: url(../assets/pexels-bob-clark-21148._colour_1_blur.jpg);
   background-size: cover;
   height: 100vh;
   margin: 0;
@@ -270,7 +274,7 @@ main .mainHeader {
 .wrapper {
   margin: 0 auto;
   max-width: 1200px;
-  width: 80%;
+  width: 85%;
 }
 
 .flexContainer1 {
@@ -281,13 +285,26 @@ main .mainHeader {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   margin-top: 10%;
 }
 
-.flexContainer1 h1 {
+.flexContainer1 .flexContainer2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.flexContainer1 .flexContainer2 h1 {
   font-size: 6rem;
   color: #bbbbbb;
   font-family: "Arimo", sans-serif;
@@ -295,15 +312,94 @@ main .mainHeader {
   line-height: 6.4rem;
 }
 
-.flexContainer1 h2 {
-  font-size: 3rem;
+.flexContainer1 .flexContainer2 h2 {
+  font-size: 2.5rem;
   color: #bbbbbb;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
   line-height: 3rem;
+  margin: 5px 0 0 0;
 }
 
-form {
+.flexContainer1 form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: auto;
+  margin-top: 75px;
+}
+
+.flexContainer1 form input[type="text"] {
+  font-size: 1.8rem;
+  color: #bbbbbb;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  line-height: 2rem;
+  color: #000000;
+  width: 280px;
+  height: 50px;
+  padding-left: 10px;
+  padding-top: 9px;
+  border-radius: 2px;
+  border: none;
+}
+
+.flexContainer1 form input[type="text"]::-webkit-input-placeholder {
+  font-size: 1.8rem;
+  color: #bbbbbb;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  line-height: 2rem;
+  line-height: 3rem;
+}
+
+.flexContainer1 form input[type="text"]:-ms-input-placeholder {
+  font-size: 1.8rem;
+  color: #bbbbbb;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  line-height: 2rem;
+  line-height: 3rem;
+}
+
+.flexContainer1 form input[type="text"]::-ms-input-placeholder {
+  font-size: 1.8rem;
+  color: #bbbbbb;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  line-height: 2rem;
+  line-height: 3rem;
+}
+
+.flexContainer1 form input[type="text"]::placeholder {
+  font-size: 1.8rem;
+  color: #bbbbbb;
+  font-family: "Arimo", sans-serif;
+  font-weight: 400;
+  line-height: 2rem;
+  line-height: 3rem;
+}
+
+.flexContainer1 form button {
+  padding-top: 2px;
+  height: 50px;
+  width: 90px;
+  margin-left: 20px;
+  background-color: #48426d;
+  border: none;
+  border-radius: 2px;
+  color: #ffe3d8;
+  font-size: 1.8rem;
+}
+
+footer {
+  min-width: 100%;
+  text-align: center;
+  background-color: #312c51;
+  height: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -312,54 +408,27 @@ form {
           justify-content: center;
 }
 
-form input[type="text"] {
-  font-size: 1.8rem;
-  color: #bbbbbb;
-  font-family: "Arimo", sans-serif;
-  font-weight: 400;
-  line-height: 2rem;
-  color: #000000;
-  width: 300px;
-  height: 40px;
-  padding-left: 10px;
+footer p {
+  margin: 0;
+  padding: 10px;
+  font-size: 1.4rem;
+  color: #ffe3d8;
+  opacity: 0.7;
 }
 
-form input[type="text"]::-webkit-input-placeholder {
-  font-size: 1.8rem;
-  color: #bbbbbb;
-  font-family: "Arimo", sans-serif;
-  font-weight: 400;
-  line-height: 2rem;
-  line-height: 3rem;
+footer p span {
+  margin-right: 7px;
 }
 
-form input[type="text"]:-ms-input-placeholder {
-  font-size: 1.8rem;
-  color: #bbbbbb;
-  font-family: "Arimo", sans-serif;
-  font-weight: 400;
-  line-height: 2rem;
-  line-height: 3rem;
+footer a {
+  color: #ffe3d8;
+  font-size: 1.4rem;
+  opacity: 0.7;
+  padding-top: 10px;
+  margin: 0;
+  text-decoration: none;
 }
 
-form input[type="text"]::-ms-input-placeholder {
-  font-size: 1.8rem;
-  color: #bbbbbb;
-  font-family: "Arimo", sans-serif;
-  font-weight: 400;
-  line-height: 2rem;
-  line-height: 3rem;
-}
-
-form input[type="text"]::placeholder {
-  font-size: 1.8rem;
-  color: #bbbbbb;
-  font-family: "Arimo", sans-serif;
-  font-weight: 400;
-  line-height: 2rem;
-  line-height: 3rem;
-}
-
-form input[type="submit"] {
-  height: 40px;
+footer a:hover {
+  color: white;
 }

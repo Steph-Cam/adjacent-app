@@ -9,34 +9,37 @@
 <body>
   <main>
     <div class="mainHeader">
-      <div class="wrapper">
-        <div class="flexContainer1">
-          <h1>
-            App Name
+      <div class="wrapper flexContainer1">
+        <div class="flexContainer2">
+          <h1 class="sr-only">
+            Adjacent
           </h1>
+          <img src="./assets/Adjacent-Logo.png" alt="">
           <h2>
             Time for some sweet new tunes...
           </h2>
         </div>
+        <form action="">
+          <input type="text" id="artistInput" placeholder="Type an Artist" required>
+          <label for="artistInput"></label>
+          <!-- <input type="submit" id="submitButton"> -->
+          <button type="submit">GO!</button>
+        </form>
       </div>
-      <form action="">
-        <input type="text" id="artistInput" placeholder="Placeholder text" required>
-        <label for="artistInput"></label>
-        <input type="submit" id="submitButton">
-        <label for="submitButton"></label>
-      </form>
-    </div>
-    <div class="artistDisplay">
-        <ul id="newArtists">
-          <!-- Content dynamically here -->
-        </ul>
+      <div class="wrapper artistDisplay">
+          <ul id="newArtists">
+            <!-- Content dynamically here -->
+          </ul>
+      </div>
     </div>
   </main>
 
   <footer>
     <p>
-      Created at Juno College | 2021
+      Created at 
     </p>
+    <a href="https://junocollege.com/" target="_blank" rel="noopener">Juno College</a>
+    <p> <span>|</span> 2021</p>
   </footer>
     <script src="script.js"></script>
 </body>

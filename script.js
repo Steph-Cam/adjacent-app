@@ -11,7 +11,7 @@ const ulElement = document.getElementById("newArtists");
 // });
 let newArray = [];
 artistApp.getArtists = (artist) => {
-  // console.log('hello');
+  
   const url1 = new URL(artistApp.apiUrl);
   url1.search = new URLSearchParams({
     method: "artist.getSimilar",
@@ -27,36 +27,36 @@ artistApp.getArtists = (artist) => {
     })
     .then((data) => {
       const artists = data.similarartists.artist;
-      // console.log(artists);
+    
       const dataArray = [];
       for (let i = 0; i < artists.length; i++) {
         dataArray.push(artists[i].name);
         // dataArray.push(artists[i].url);
       }
-      // console.log(dataArray);
+      
       // similar to the pokemon example where we had a array of URLS, you now have an array of artist names
       // that can be mapped over to send a fetch request for each one
       const newArtists = dataArray.map((artistImage) => {
-        // console.log(artistImage);
+        
         return fetch(
           `https://www.theaudiodb.com/api/v1/json/1/search.php/?s=${artistImage}`
         ).then((data) => {
           return data.json();
         });
       });
-      // console.log(newArtists);
+      
       Promise.all(newArtists).then((secondData) => {
-        // console.log(secondData[0].artists[1].strArtistThumb); // a array of 9 similar artists data
-        // console.log(secondData[1].artists);
+        console.log(newArtists);
+      
         secondData.forEach((secondDataChild) => {
           secondDataChild.artists.map((artistThumb) => {
             newArray.push({
               name: artistThumb.strArtist,
               imgThumb: artistThumb.strArtistThumb,
-              url: artistThumb.strLastFMChart,
+              url: artistThumb.LastFMChart
             });
             // newArray.push(artistThumb.strArtistThumb + artistThumb.strArtist);
-            // console.log(newArray);
+            
           });
           // secondData[0].artists.map((artistThumb) => {
           //     newArray.push(artistThumb.strArtistThumb);
@@ -64,9 +64,9 @@ artistApp.getArtists = (artist) => {
         console.log(newArray);
         artistApp.displayArtists(newArray);
       });
-      // console.log(newArray);
+      
       // dataArray.push(newArtists);
-      // console.log(dataArray);
+  
     });
   // artistApp.displayArtists(newArray);
   // return newArray;
@@ -84,7 +84,7 @@ artistApp.displayArtists = (artistArray) => {
     artistImage.setAttribute("src", item.imgThumb);
     artistName.textContent = item.name;
     artistButton.setAttribute("href", item.url);
-    // Susan's way:
+  
     artistButton.append("Artist Profile");
     //  add list elements to the ul
     listElement.appendChild(artistButton);

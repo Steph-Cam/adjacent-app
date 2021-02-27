@@ -1,7 +1,10 @@
 // Main Section
-
+body {
+  min-height: 100vh;
+}
 main {
-  background-image: url(../assets/pexels-bob-clark-21148._colour_1.jpg);
+  // background-image: url(../assets/pexels-bob-clark-21148._colour_1.jpg);
+  background-image: url(../assets/pexels-bob-clark-21148._colour_1_blur.jpg);
   background-size: cover;
   height: 100vh;
   margin: 0;
@@ -17,44 +20,106 @@ main {
 .wrapper {
   margin: 0 auto;
   max-width: 1200px;
-  width: 80%;
+  width: 85%;
 }
+
 
 .flexContainer1 {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 10%;
-
-  h1 {
-    @include mainHeading(6rem);
+  
+  .flexContainer2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    // margin: 10% 0 0 10%;
+  
+    h1 {
+      @include mainHeading(6rem);
+      // margin-bottom: 5px;
+    }
+  
+    h2 {
+      @include subHeading(2.5rem);
+      margin: 5px 0 0 0;
+    }
   }
 
-  h2 {
-    @include subHeading(3rem);
+  form {
+  
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+    margin-top: 75px;
+  
+  
+    input[type="text"] {
+      @include paragraph(1.8rem);
+      color: $black;
+      width: 280px;
+      height: 50px;
+      padding-left: 10px;
+      padding-top: 9px;
+      border-radius: 2px;
+      border: none;
+    }
+  
+    input[type="text"]::placeholder {
+      @include paragraph(1.8rem);
+      line-height: 3rem;
+    }
+  
+    button {
+      padding-top: 2px;
+      height: 50px;
+      width: 90px;
+      margin-left: 20px;
+      background-color: $violet;
+      border: none;
+      border-radius: 2px;
+      color: $peach;
+      font-size: 1.8rem;
+    }
   }
+
 }
 
-form {
-
+footer {
+  min-width: 100%;
+  text-align: center;
+  background-color: $eggplant;
+  height: 35px;
   display: flex;
   justify-content: center;
-  
-  input[type="text"] {
-    @include paragraph(1.8rem);
-    color: $black;
-    width: 300px;
-    height: 40px;
-    padding-left: 10px;
+
+  p {
+    margin: 0;
+    padding: 10px;
+    font-size: 1.4rem;
+    color: $peach;
+    opacity: 0.7;
+    
+    span {
+      margin-right: 7px;
+    }
   }
 
-  input[type="text"]::placeholder {
-    @include paragraph(1.8rem);
-    line-height: 3rem;
+  a {
+    color: $peach;
+    font-size: 1.4rem;
+    opacity: 0.7;
+    padding-top: 10px;
+    margin: 0;
+    text-decoration: none;
   }
 
-  input[type="submit"] {
-    // padding: 15px;
-    height: 40px;
+  a:hover {
+    color: white;
   }
+
+
 }
+
+

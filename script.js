@@ -18,7 +18,7 @@ artistApp.getArtists = (artist) => {
     artist: artist,
     api_key: artistApp.apiKey,
     format: "json",
-    limit: 5,
+    limit: 3,
     // autocorrect: [1]
   });
   fetch(url1)

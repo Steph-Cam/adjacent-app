@@ -395,6 +395,43 @@ main .mainHeader {
   font-size: 1.8rem;
 }
 
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+ul li {
+  width: auto;
+  width: calc((100% / 3) - 40px);
+  background-color: #48426d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  margin-top: 100px;
+  border-radius: 2px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  -webkit-box-shadow: 5px 5px 35px #312c51;
+          box-shadow: 5px 5px 35px #312c51;
+}
+
+ul li img {
+  min-height: 180px;
+  min-width: 180px;
+  margin: 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
 footer {
   min-width: 100%;
   text-align: center;

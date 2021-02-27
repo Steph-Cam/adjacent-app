@@ -86,6 +86,38 @@ main {
 
 }
 
+ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  li {
+    width: auto;
+    width: calc((100% / 3) - 40px);
+    background-color: $violet;
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 100px;
+    border-radius: 2px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    box-shadow: 5px 5px 35px $eggplant;
+    
+    
+    img {
+      min-height: 180px;
+      min-width: 180px;
+      margin: 0;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+  }
+
+  
+
+}
+
+
 footer {
   min-width: 100%;
   text-align: center;

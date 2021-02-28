@@ -283,7 +283,7 @@ body {
 
 .flexContainer1 .flexContainer2 h2 {
   font-size: 2.5rem;
-  color: #bbbbbb;
+  color: #bfbfbf;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
   line-height: 3rem;
@@ -303,61 +303,60 @@ body {
 
 .flexContainer1 form input[type="text"] {
   font-size: 1.8rem;
-  color: #bbbbbb;
+  color: #bfbfbf;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  color: #051a44;
-  background-color: #bbbbbb;
-  opacity: 0.7;
+  color: #d4d4d4;
+  background-color: #44546f;
   width: 280px;
   height: 50px;
   padding-left: 10px;
-  padding-top: 4px;
+  padding-top: 2px;
   border-radius: 2px;
   border: none;
 }
 
 .flexContainer1 form input[type="text"]::-webkit-input-placeholder {
   font-size: 1.8rem;
-  color: #bbbbbb;
+  color: #bfbfbf;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  color: #051a44;
+  color: #bfbfbf;
 }
 
 .flexContainer1 form input[type="text"]:-ms-input-placeholder {
   font-size: 1.8rem;
-  color: #bbbbbb;
+  color: #bfbfbf;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  color: #051a44;
+  color: #bfbfbf;
 }
 
 .flexContainer1 form input[type="text"]::-ms-input-placeholder {
   font-size: 1.8rem;
-  color: #bbbbbb;
+  color: #bfbfbf;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  color: #051a44;
+  color: #bfbfbf;
 }
 
 .flexContainer1 form input[type="text"]::placeholder {
   font-size: 1.8rem;
-  color: #bbbbbb;
+  color: #bfbfbf;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  color: #051a44;
+  color: #bfbfbf;
 }
 
 .flexContainer1 form button {
   padding-top: 2px;
   height: 50px;
   width: 90px;
-  margin-left: 20px;
+  margin-left: 7px;
   background-color: #48426d;
   border: none;
   border-radius: 2px;
-  color: #ffe3d8;
+  color: #d4d4d4;
   font-size: 1.8rem;
 }
 
@@ -433,7 +432,7 @@ ul li h3 {
 
 ul li a {
   font-size: 1.5rem;
-  color: #bbbbbb;
+  color: #bfbfbf;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
   opacity: 0.9;
@@ -472,13 +471,13 @@ footer {
 
 footer p {
   font-size: 1.5rem;
-  color: #bbbbbb;
+  color: #bfbfbf;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
   margin: 0;
   padding: 10px 0;
   font-size: 1.4rem;
-  color: #bbbbbb;
+  color: #bfbfbf;
   opacity: 0.7;
 }
 
@@ -488,10 +487,10 @@ footer p span {
 
 footer a {
   font-size: 1.5rem;
-  color: #bbbbbb;
+  color: #bfbfbf;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  color: #bbbbbb;
+  color: #bfbfbf;
   font-size: 1.4rem;
   opacity: 0.7;
   padding-top: 10px;
@@ -521,7 +520,7 @@ footer a:hover {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
-    width: 50%;
+    width: 60%;
   }
   .artistDisplay {
     display: -webkit-box;
@@ -550,6 +549,12 @@ footer a:hover {
 @media (max-width: 880px) {
   body {
     background-color: #051a44;
+  }
+  body .flexContainer1 .flexContainer2 img {
+    width: 80%;
+  }
+  body .flexContainer1 .flexContainer2 h2 {
+    font-size: 2rem;
   }
   main ul li {
     width: 100%;
@@ -595,7 +600,7 @@ footer a:hover {
             align-items: center;
     width: 100%;
   }
-  .flexContainer1 form input[type=text] {
+  .flexContainer1 form input[type="text"] {
     width: 100%;
     min-width: 150px;
   }

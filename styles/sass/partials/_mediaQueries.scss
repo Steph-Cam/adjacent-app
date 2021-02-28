@@ -9,7 +9,7 @@
 
     .flexContainer1 {
       align-items: flex-start;
-      width: 50%;
+      width: 60%;
     }
   }
 
@@ -36,6 +36,19 @@
 @media (max-width: 880px) {
   body {
     background-color: $darkPurple;
+
+    .flexContainer1 {
+      .flexContainer2 {
+
+        img {
+          width: 80%;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+      }
+    }
   }
   main {
     ul {
@@ -61,11 +74,8 @@
 // Portrait Tablets & Phones
 
 @media (max-width: 580px) {
-  
   .flexContainer1 {
-
     .flexContainer2 {
-
       align-items: flex-start;
       img {
         width: 80%;
@@ -80,21 +90,19 @@
     }
 
     form {
-
       flex-direction: column;
       justify-content: center;
       align-items: center;
       width: 100%;
-      
-      input[type=text] {
+
+      input[type="text"] {
         width: 100%;
         min-width: 150px;
       }
-      
+
       button {
         width: 70%;
         margin: 10px 0 0 0;
-        
       }
     }
   }

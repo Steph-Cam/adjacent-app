@@ -240,32 +240,12 @@ html {
   font-size: 62.5%;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 body {
   background-image: url(../assets/pexels-bob-clark-21148._colour_1_blur.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   position: relative;
-}
-
-main header {
-  height: 30%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .wrapper {
@@ -326,8 +306,7 @@ main header {
   color: #bbbbbb;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  line-height: 2rem;
-  color: #000000;
+  color: #051a44;
   background-color: #bbbbbb;
   opacity: 0.7;
   width: 280px;
@@ -343,8 +322,7 @@ main header {
   color: #bbbbbb;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  line-height: 2rem;
-  line-height: 3rem;
+  color: #051a44;
 }
 
 .flexContainer1 form input[type="text"]:-ms-input-placeholder {
@@ -352,8 +330,7 @@ main header {
   color: #bbbbbb;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  line-height: 2rem;
-  line-height: 3rem;
+  color: #051a44;
 }
 
 .flexContainer1 form input[type="text"]::-ms-input-placeholder {
@@ -361,8 +338,7 @@ main header {
   color: #bbbbbb;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  line-height: 2rem;
-  line-height: 3rem;
+  color: #051a44;
 }
 
 .flexContainer1 form input[type="text"]::placeholder {
@@ -370,8 +346,7 @@ main header {
   color: #bbbbbb;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  line-height: 2rem;
-  line-height: 3rem;
+  color: #051a44;
 }
 
 .flexContainer1 form button {
@@ -406,6 +381,9 @@ ul {
       -ms-flex-pack: start;
           justify-content: flex-start;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   margin-top: 20px;
 }
 
@@ -458,7 +436,6 @@ ul li a {
   color: #bbbbbb;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  line-height: 2rem;
   opacity: 0.9;
   margin: 0 0 10px 10px;
   text-decoration: none;
@@ -498,7 +475,6 @@ footer p {
   color: #bbbbbb;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  line-height: 2rem;
   margin: 0;
   padding: 10px 0;
   font-size: 1.4rem;
@@ -515,7 +491,6 @@ footer a {
   color: #bbbbbb;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  line-height: 2rem;
   color: #bbbbbb;
   font-size: 1.4rem;
   opacity: 0.7;
@@ -528,7 +503,7 @@ footer a:hover {
   color: white;
 }
 
-/* Small desktops */
+/* Small Desktops */
 @media (max-width: 1080px) {
   header {
     display: -webkit-box;
@@ -587,5 +562,45 @@ footer a:hover {
 @media (max-width: 740px) {
   ul {
     margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 580px) {
+  .flexContainer1 .flexContainer2 {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .flexContainer1 .flexContainer2 img {
+    width: 80%;
+    min-width: 200px;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .flexContainer1 .flexContainer2 h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .flexContainer1 form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .flexContainer1 form input[type=text] {
+    width: 100%;
+    min-width: 150px;
+  }
+  .flexContainer1 form button {
+    width: 70%;
+    margin: 10px 0 0 0;
   }
 }

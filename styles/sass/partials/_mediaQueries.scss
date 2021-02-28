@@ -1,4 +1,4 @@
-/* Small desktops */
+/* Small Desktops */
 
 @media (max-width: 1080px) {
   header {
@@ -31,6 +31,8 @@
   }
 }
 
+// Tablets
+
 @media (max-width: 880px) {
   body {
     background-color: $darkPurple;
@@ -48,8 +50,52 @@
   }
 }
 
+// Minor Breakpoint
+
 @media (max-width: 740px) {
   ul {
     margin-bottom: 50px;
+  }
+}
+
+// Portrait Tablets & Phones
+
+@media (max-width: 580px) {
+  
+  .flexContainer1 {
+
+    .flexContainer2 {
+
+      align-items: flex-start;
+      img {
+        width: 80%;
+        min-width: 200px;
+        align-self: center;
+      }
+
+      h2 {
+        font-size: 2rem;
+        text-align: center;
+      }
+    }
+
+    form {
+
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      
+      input[type=text] {
+        width: 100%;
+        min-width: 150px;
+      }
+      
+      button {
+        width: 70%;
+        margin: 10px 0 0 0;
+        
+      }
+    }
   }
 }

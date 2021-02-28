@@ -1,4 +1,3 @@
-// Main Section
 body {
   background-image: url(../assets/pexels-bob-clark-21148._colour_1_blur.jpg);
   background-repeat: no-repeat;
@@ -7,33 +6,25 @@ body {
   position: relative;
 }
 
-main {
-
-  header {
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
 .wrapper {
   margin: 0 auto;
   max-width: 1200px;
   width: 85%;
 }
 
+// Header Styles
+
 .flexContainer1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
+  
   .flexContainer2 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-top: 40px;
-
+    
     h2 {
       @include subHeading(2.5rem);
       margin: 5px 0 0 0;
@@ -48,7 +39,7 @@ main {
 
     input[type="text"] {
       @include paragraph(1.8rem);
-      color: $black;
+      color: $darkPurple;
       background-color: $grey;
       opacity: 0.7;
       width: 280px;
@@ -61,7 +52,7 @@ main {
 
     input[type="text"]::placeholder {
       @include paragraph(1.8rem);
-      line-height: 3rem;
+      color: $darkPurple;
     }
 
     button {
@@ -80,20 +71,27 @@ main {
         opacity: 0.8;
         color: white;
 
-        &:active {
-          position: relative;
-          left: 2px;
-          top: 2px;
-        }
+      &:active {
+        position: relative;
+        left: 2px;
+        top: 2px;
+      }
       }
     }
   }
 }
 
+// Main Section Start
+
+// Dynamic Content Styles
+
 ul {
   display: flex;
   justify-content: flex-start;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   margin-top: 20px;
 
   li {
@@ -147,6 +145,8 @@ ul {
     }
   }
 }
+
+// Footer Styles
 
 footer {
   min-width: 100%;

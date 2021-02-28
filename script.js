@@ -84,6 +84,10 @@ artistApp.displayArtists = (artistArray) => {
     const artistName = document.createElement("h3");
     const artistButton = document.createElement("a");
     artistImage.setAttribute("src", item.imgThumb);
+    artistImage.setAttribute("alt", `${item.name} Image`);
+    artistButton.setAttribute("target", '_blank');
+    artistButton.setAttribute('rel', 'noopener');
+
     artistName.textContent = item.name;
     artistButton.setAttribute("href", item.url);
   

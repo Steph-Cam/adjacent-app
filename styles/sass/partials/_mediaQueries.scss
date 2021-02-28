@@ -1,0 +1,55 @@
+/* Small desktops */
+
+@media (max-width: 1080px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin: 0 auto;
+
+    .flexContainer1 {
+      align-items: flex-start;
+      width: 50%;
+    }
+  }
+
+  .artistDisplay {
+    display: flex;
+    justify-content: center;
+
+    ul {
+      flex-wrap: wrap;
+      width: 60%;
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+
+      li {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 880px) {
+  body {
+    background-color: $darkPurple;
+  }
+  main {
+    ul {
+      li {
+        width: 100%;
+
+        &:last-of-type {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  ul {
+    margin-bottom: 50px;
+  }
+}

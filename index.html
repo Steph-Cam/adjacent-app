@@ -7,30 +7,30 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
+  <header>
+    <div class="wrapper flexContainer1">
+      <div class="flexContainer2">
+        <h1 class="sr-only">
+          Adjacent
+        </h1>
+        <img src="./assets/Adjacent-Logo.png" alt="">
+        <h2>
+          Time for some sweet new tunes!
+        </h2>
+      </div>
+      <form action="">
+        <input type="text" id="artistInput" placeholder="Type an Artist" required>
+        <label for="artistInput"></label>
+        <!-- <input type="submit" id="submitButton"> -->
+        <button type="submit">GO!</button>
+      </form>
+    </div>
+  </header>
   <main>
-    <div class="mainHeader">
-      <div class="wrapper flexContainer1">
-        <div class="flexContainer2">
-          <h1 class="sr-only">
-            Adjacent
-          </h1>
-          <img src="./assets/Adjacent-Logo.png" alt="">
-          <h2>
-            Time for some sweet new tunes...
-          </h2>
-        </div>
-        <form action="">
-          <input type="text" id="artistInput" placeholder="Type an Artist" required>
-          <label for="artistInput"></label>
-          <!-- <input type="submit" id="submitButton"> -->
-          <button type="submit">GO!</button>
-        </form>
-      </div>
-      <div class="wrapper artistDisplay">
-          <ul id="newArtists">
-            <!-- Content dynamically here -->
-          </ul>
-      </div>
+    <div class="wrapper artistDisplay">
+        <ul id="newArtists">
+          <!-- Content dynamically here -->
+        </ul>
     </div>
   </main>
 

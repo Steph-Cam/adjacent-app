@@ -1,17 +1,16 @@
 // Main Section
 body {
-  min-height: 100vh;
-  position: relative;
-}
-main {
-  // background-image: url(../assets/pexels-bob-clark-21148._colour_1.jpg);
   background-image: url(../assets/pexels-bob-clark-21148._colour_1_blur.jpg);
+  background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  margin: 0;
+  position: relative;
+}
 
-  .mainHeader {
-    height: 100vh;
+main {
+
+  header {
+    height: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,7 +92,7 @@ main {
 
 ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   width: 100%;
   margin-top: 20px;
 

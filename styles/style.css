@@ -247,19 +247,15 @@ ul {
 }
 
 body {
-  min-height: 100vh;
+  background-image: url(../assets/pexels-bob-clark-21148._colour_1_blur.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
   position: relative;
 }
 
-main {
-  background-image: url(../assets/pexels-bob-clark-21148._colour_1_blur.jpg);
-  background-size: cover;
-  height: 100vh;
-  margin: 0;
-}
-
-main .mainHeader {
-  height: 100vh;
+main header {
+  height: 30%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -406,8 +402,9 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   width: 100%;
   margin-top: 20px;
 }
@@ -529,4 +526,66 @@ footer a {
 
 footer a:hover {
   color: white;
+}
+
+/* Small desktops */
+@media (max-width: 1080px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-item-align: center;
+        align-self: center;
+    margin: 0 auto;
+  }
+  header .flexContainer1 {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 50%;
+  }
+  .artistDisplay {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .artistDisplay ul {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 60%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  .artistDisplay ul li {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 880px) {
+  body {
+    background-color: #051a44;
+  }
+  main ul li {
+    width: 100%;
+  }
+  main ul li:last-of-type {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 740px) {
+  ul {
+    margin-bottom: 50px;
+  }
 }

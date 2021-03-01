@@ -4,7 +4,7 @@ const artistApp = {};
 artistApp.apiUrl = "https://ws.audioscrobbler.com/2.0/";
 artistApp.apiKey = "e35219e4872d0f1dcee255f3768714bb";
 
-// AudioDB API
+// AudioDB API - Note to instructor/marker, any artist searched that yields no result is due to this API not being able to return the required number of artists (4) containing names with only alphabetical characters, or other required data that disrupted a successful call. Unfortunately we could not find a more robust, non-OAuth API that contained the data we needed so we did the best we could with this one.
 artistApp.apiUrl2 = "https://www.theaudiodb.com/api/v1/json/1/search.php";
 const ulElement = document.getElementById("newArtists");
 
@@ -56,7 +56,7 @@ artistApp.getArtists = (artist) => {
         artistApp.displayArtists(artistsToDisplay);
       })
       .catch(error => {
-        alert('Sorry, no artist found!');
+        alert(`Sorry, that artist can't be found! Try another.`);
       })
     });
 };

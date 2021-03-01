@@ -306,7 +306,7 @@ body {
   color: #bfbfbf;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  color: #d4d4d4;
+  color: white;
   background-color: #44546f;
   width: 280px;
   height: 50px;
@@ -321,7 +321,7 @@ body {
   color: #bfbfbf;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  color: #bfbfbf;
+  color: white;
 }
 
 .flexContainer1 form input[type="text"]:-ms-input-placeholder {
@@ -329,7 +329,7 @@ body {
   color: #bfbfbf;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  color: #bfbfbf;
+  color: white;
 }
 
 .flexContainer1 form input[type="text"]::-ms-input-placeholder {
@@ -337,7 +337,7 @@ body {
   color: #bfbfbf;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  color: #bfbfbf;
+  color: white;
 }
 
 .flexContainer1 form input[type="text"]::placeholder {
@@ -345,7 +345,7 @@ body {
   color: #bfbfbf;
   font-family: "Arimo", sans-serif;
   font-weight: 400;
-  color: #bfbfbf;
+  color: white;
 }
 
 .flexContainer1 form button {
@@ -496,6 +496,7 @@ footer a {
   padding-top: 10px;
   margin: 0 5px;
   text-decoration: none;
+  cursor: ne-resize;
 }
 
 footer a:hover {

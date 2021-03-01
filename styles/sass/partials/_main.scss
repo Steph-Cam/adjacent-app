@@ -39,7 +39,7 @@ body {
 
     input[type="text"] {
       @include paragraph(1.8rem);
-      color: $lightGrey;
+      color: white;
       background-color: $mediumGrey;
       width: 280px;
       height: 50px;
@@ -51,7 +51,7 @@ body {
 
     input[type="text"]::placeholder {
       @include paragraph(1.8rem);
-      color: $grey;
+      color: white;
     }
 
     button {
@@ -178,6 +178,7 @@ footer {
     padding-top: 10px;
     margin: 0 5px;
     text-decoration: none;
+    cursor: ne-resize;
   }
 
   a:hover {
